@@ -29,6 +29,7 @@ const ProfilePage = () => {
         padding: "80px 0px 40px 0px",
       }}
     >
+      MORE COMING SOON
       <ProfileCard profile={profile} setProfile={setProfile} />
     </div>
   );

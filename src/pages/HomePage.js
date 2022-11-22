@@ -18,7 +18,7 @@ const HomePage = ({}) => {
         padding: "80px 0px 40px 0px",
       }}
     >
-      <br />
+      MORE COMING SOON
       <div
         style={{
           margin: "auto",
@@ -33,7 +33,6 @@ const HomePage = ({}) => {
           setCurrency={setCurrency}
         />
       </div>
-
       <br />
     </div>
   );

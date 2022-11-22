@@ -52,7 +52,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header params={params} />
+      <Header connectWallet={connectWallet} selectedAddress={selectedAddress} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />

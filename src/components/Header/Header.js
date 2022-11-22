@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const Header = ({}) => {
+const Header = ({ connectWallet, selectedAddress }) => {
   const location = useLocation();
 
   const formattedParams = (params) => {
@@ -32,12 +32,29 @@ const Header = ({}) => {
         {formattedParams(location.pathname)}
       </div>
       <div
-        style={{
-          margin: "auto",
-          textAlign: "right",
+        style={{ margin: "auto" }}
+        onMouseEnter={({ currentTarget }) => {
+          if (!selectedAddress) {
+            currentTarget.style.color = "#000000";
+          }
+        }}
+        onMouseOut={({ currentTarget }) => {
+          if (!selectedAddress) {
+            currentTarget.style.color = "#ffffff";
+          }
+        }}
+        onClick={({ currentTarget }) => {
+          if (!selectedAddress) {
+            connectWallet();
+            currentTarget.style.color = "#fc0";
+          } else {
+            alert(
+              "Wallet already connected. To disconecct simply refresh the webpage."
+            );
+          }
         }}
       >
-        0x6e77236c577E10855F3eaE68A5BE34bce1072e75
+        {selectedAddress || "Connect Web3 Wallet"}
       </div>
     </div>
   );
